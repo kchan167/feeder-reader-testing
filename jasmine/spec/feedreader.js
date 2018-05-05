@@ -60,7 +60,7 @@ $(function() {
          */
          it('Menu is hidden by default', function() {
              expect($('body').hasClass('menu-hidden')).toBeTruthy();
-         })
+         });
 
 
          /* TODO: Write a test that ensures the menu changes
@@ -68,6 +68,12 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          it('Menu changes visibility', function() {
+              $('.menu-icon-link').click();
+              expect($('body').hasClass('menu-hidden')).toBeFalsy();
+              $('.menu-icon-link').click();
+              expect($('body').hasClass('menu-hidden')).toBeTruthy();
+          });
       });
 
     /* TODO: Write a new test suite named "Initial Entries" */
