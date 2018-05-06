@@ -106,10 +106,10 @@ $(function() {
          beforeEach(function(done) {
             loadFeed(0, function() {
                 feedLoaded0 = $('.feed').html();
-            });
-            loadFeed(1, function() {
-                feedLoaded1 = $('.feed').html();
-                done();
+                loadFeed(1, function() {
+                    feedLoaded1 = $('.feed').html();
+                    done();
+                });
             });
         });
         it('change html content', function(done) {
@@ -117,6 +117,9 @@ $(function() {
             expect(feedLoaded1).toBeDefined();
             expect(feedLoaded0 != feedLoaded1).toBe(true);
             done();
+        })
+        afterEach(function() {
+            loadFeed(0);
         })
      })
 }());
